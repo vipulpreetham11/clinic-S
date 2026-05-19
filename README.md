@@ -240,7 +240,7 @@ The goal is to transform healthcare workflows into scalable AI-native operationa
 
 # Live Demo
 
-https://your-demo-link.vercel.app/
+(https://clinic-s.vercel.app/)
 
 ---
 
