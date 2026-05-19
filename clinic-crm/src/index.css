@@ -1,0 +1,162 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── ClinicOS design system: Teal-600 primary, Slate-50 background ── */
+    --background: oklch(0.984 0.003 247);   /* slate-50  #f8fafc */
+    --foreground: oklch(0.213 0.027 264);   /* slate-800 */
+    --card: oklch(1 0 0);                   /* white */
+    --card-foreground: oklch(0.213 0.027 264);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.213 0.027 264);
+    --primary: oklch(0.600 0.118 184);      /* teal-600  #0d9488 */
+    --primary-foreground: oklch(0.985 0 0); /* white */
+    --secondary: oklch(0.968 0.007 247);    /* slate-100 */
+    --secondary-foreground: oklch(0.279 0.027 256);
+    --muted: oklch(0.968 0.007 247);        /* slate-100 */
+    --muted-foreground: oklch(0.554 0.016 264); /* slate-500 */
+    --accent: oklch(0.968 0.007 247);
+    --accent-foreground: oklch(0.279 0.027 256);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.985 0 0);
+    --border: oklch(0.908 0.013 255);       /* slate-200 #e2e8f0 */
+    --input: oklch(0.908 0.013 255);
+    --ring: oklch(0.600 0.118 184);         /* teal-600 */
+    --radius: 0.625rem;
+    --chart-1: oklch(0.600 0.118 184);      /* teal */
+    --chart-2: oklch(0.627 0.155 252);      /* blue */
+    --chart-3: oklch(0.595 0.183 142);      /* green */
+    --chart-4: oklch(0.699 0.167 56);       /* amber */
+    --chart-5: oklch(0.637 0.222 25);       /* red */
+    --sidebar: oklch(0.131 0.027 256);      /* slate-900 #0f172a */
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.600 0.118 184);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.213 0.027 256); /* slate-800 hover */
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(0.213 0.027 256);
+    --sidebar-ring: oklch(0.600 0.118 184);
+  }
+
+  .dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --destructive-foreground: 210 40% 98%;
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+  }
+  .theme {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Geist Variable', sans-serif;
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* ─── Login page animations ─── */
+@keyframes loginSlideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes loginFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loginFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes loginShake {
+  0% { transform: translateX(0px); }
+  15% { transform: translateX(-7px); }
+  30% { transform: translateX(7px); }
+  45% { transform: translateX(-5px); }
+  60% { transform: translateX(5px); }
+  75% { transform: translateX(-3px); }
+  90% { transform: translateX(3px); }
+  100% { transform: translateX(0px); }
+}
+
+.login-panel-left {
+  animation: loginSlideInLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.login-panel-right {
+  animation: loginFadeIn 0.8s ease 0.2s both;
+}
+
+.login-field {
+  animation: loginFadeInUp 0.5s ease both;
+}
+
+.animate-shake {
+  animation: loginShake 0.5s ease-in-out;
+}

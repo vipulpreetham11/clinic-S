@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "additionalDirectories": [
+      "c:\\Users\\Vipul preetham\\.claude\\projects\\c--Users-Vipul-preetham-Desktop-ClinicCRM\\memory"
+    ],
+    "allow": [
+      "Bash(npm run *)"
+    ]
+  }
+}
